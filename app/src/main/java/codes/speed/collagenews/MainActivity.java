@@ -1,13 +1,13 @@
 package codes.speed.collagenews;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,14 +21,17 @@ public class MainActivity extends AppCompatActivity {
     pass=findViewById(R.id.editText2);
     su=findViewById(R.id.button2);
 login=findViewById(R.id.button);
-       final Intent a=new Intent(this,Homepage.class);
+        final Intent log = new Intent(this, Homepage.class);
+        final Intent signUp = new Intent(this, SignUp.class);
+
 login.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 
         if(user.getText().toString().equals("a")&&pass.getText().toString().equals("1"))
         {
-            startActivity(a);}
+            startActivity(log);
+        }
         else {
 
             Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
@@ -38,7 +41,8 @@ login.setOnClickListener(new View.OnClickListener() {
 su.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        startActivity(a);
+        startActivity(signUp);
+
     }
 });
 

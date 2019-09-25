@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "766991305045",
+    "firebase_url": "https://collagenews-1902f.firebaseio.com",
+    "project_id": "collagenews-1902f",
+    "storage_bucket": "collagenews-1902f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766991305045:android:4a020f6348e801255e47dc",
+        "android_client_info": {
+          "package_name": "codes.speed.collagenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766991305045-7d0pnqnhns3ajq69hbps5augv5t8cf93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "codes.speed.collagenews",
+            "certificate_hash": "ea022c64778a8974ba5f9fdb75a7a14c7b71f42d"
+          }
+        },
+        {
+          "client_id": "766991305045-h4v5cac7h2j40sfc8khug3fr0sov8oq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUt7OJ5seecvNxTl8nMWHdagti8UkF97M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766991305045-h4v5cac7h2j40sfc8khug3fr0sov8oq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
