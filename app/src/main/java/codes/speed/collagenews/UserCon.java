@@ -1,7 +1,22 @@
 package codes.speed.collagenews;
 
 public class UserCon {
-    private String title, content, catagary, collage, url;
+    private String title;
+    private String content;
+    private String catagary;
+    private String collage;
+    private String url;
+    private String auther;
+
+    public String getAuther() {
+        return auther;
+    }
+
+    public void setAuther(String auther) {
+        this.auther = auther;
+    }
+
+
 
     public String getTitle() {
         return title;
@@ -43,12 +58,13 @@ public class UserCon {
         this.url = url;
     }
 
-    public UserCon(String title, String content, String catagary, String collage, String url) {
+    public UserCon(String title, String content, String catagary, String collage, String url, String auther) {
         this.title = title;
         this.content = content;
         this.catagary = catagary;
         this.collage = collage;
         this.url = url;
+        this.auther = auther;
     }
 
     public UserCon() {

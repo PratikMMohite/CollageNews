@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,28 +24,34 @@ import java.util.List;
 
 import codes.speed.collagenews.Homepage;
 import codes.speed.collagenews.R;
+import codes.speed.collagenews.loadClub;
 
 public class DashboardFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference reference;
+    private TextView t1;
 
     private ListView lv;
+    List<String> club = new ArrayList<String>();
+    List<String> keys = new ArrayList<String>();
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
+        final Intent showactivity = new Intent(getContext(), loadClub.class);
         lv = root.findViewById(R.id.clublist);
-
+        t1 = root.findViewById(R.id.clubname);
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("clubs");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<String> club = new ArrayList<String>();
+                club.clear();
+                keys.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     System.out.println(ds.getValue(String.class));
                     club.add(ds.getValue(String.class));
+                    keys.add(ds.getKey());
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                             getContext(),
                             android.R.layout.simple_list_item_1,
@@ -63,8 +70,10 @@ public class DashboardFragment extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(home);
-
+                // Toast.makeText(getContext(), club.get(position).toString(), Toast.LENGTH_SHORT).show();
+                showactivity.putExtra("clubname", club.get(position));
+                showactivity.putExtra("clubkey", keys.get(position));
+                startActivity(showactivity);
             }
         });
 

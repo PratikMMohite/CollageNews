@@ -3,5 +3,7 @@
     <color name="colorPrimary">#D81B60</color>
     <color name="colorPrimaryDark">#D81B60</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="postcolor">#FFFFFF</color>
+    <color name="collagecolor">#8F8F8F</color>
 
 </resources>
