@@ -15,7 +15,7 @@ public class NotificationsViewModel extends ViewModel {
         mText = new MutableLiveData<>();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            mText.setValue("User Email:" + user.getEmail() + "\nuser ID:" + user.getUid());
+            mText.setValue(user.getEmail());
         } else {
             mText.setValue("PROFILE");
         }

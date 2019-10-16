@@ -26,7 +26,7 @@ public class UploadRequest extends AppCompatActivity {
         title1 = findViewById(R.id.title);
         content = findViewById(R.id.content);
         catag = findViewById(R.id.catagary);
-        cname = findViewById(R.id.cname);
+        cname = findViewById(R.id.scname);
         req = findViewById(R.id.reqp);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         req.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +37,6 @@ public class UploadRequest extends AppCompatActivity {
 
 
         });
-
-
         file.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +53,6 @@ public class UploadRequest extends AppCompatActivity {
         final String cna = cname.getText().toString();
         UserCon use = new UserCon(tit, con, cat, cna, "empty");
         mDatabase.child("collage").child("Posts").push().setValue(use);
-
     }
 
 

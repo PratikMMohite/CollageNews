@@ -1,19 +1,20 @@
 package codes.speed.collagenews.ui.dashboard;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
-public class DashboardViewModel extends ViewModel {
-
-    private MutableLiveData<String> mText;
+public class DashboardViewModel {
+    private String name;
 
     public DashboardViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("Collage List");
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public DashboardViewModel(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
